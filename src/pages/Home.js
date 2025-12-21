@@ -21,7 +21,7 @@ const Home = () => {
   ];
 
   const topProducts = [
-    { name: 'معقم الأسطح المتقدم', category: 'تعقيم', color: '#3B82F6' },
+    { name: 'معقم الأسطح المتقدم', category: 'تعقيم', color: '#3B82F6', image: 'https://medimixegypt.com/wp-content/uploads/2025/09/1010349.jpg' },
     { name: 'منظف الزجاج اللامع', category: 'تنظيف الزجاج', color: '#10B981' },
     { name: 'مطهر الحمامات القوي', category: 'تنظيف الحمامات', color: '#8B5CF6' },
     { name: 'منعش الجو الطبيعي', category: 'تعطير', color: '#F59E0B' }
@@ -105,6 +105,9 @@ const Home = () => {
                 style={{ backgroundColor: product.color }}
               ></div>
               <div className="product-info">
+                {product.image && (
+                  <img src={product.image} alt={product.name} className="product-thumb" />
+                )}
                 <h3>{product.name}</h3>
                 <p className="product-category">{product.category}</p>
                 <button className="product-btn">تفاصيل المنتج</button>

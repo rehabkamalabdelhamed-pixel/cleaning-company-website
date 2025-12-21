@@ -162,6 +162,13 @@ a {
   background: white;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70px;
+  z-index: 999;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
 }
 
 .mobile-nav-link {
@@ -340,6 +347,14 @@ a {
 
 .product-info {
   padding: 20px;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .product-info h3 {
