@@ -6,7 +6,8 @@ import {
   FaHospital, 
   FaUtensils, 
   FaCar, 
-  FaShieldVirus 
+  FaShieldVirus,
+  FaArrowLeft
 } from 'react-icons/fa';
 
 const Services = () => {
@@ -49,11 +50,23 @@ const Services = () => {
     }
   ];
 
-  return (
+    return (
     <div className="services-page">
       <div className="page-header">
-        <h1>خدماتنا ومنتجاتنا</h1>
-        <p>اكتشف مجموعة منتجاتنا الشاملة التي تلبي جميع احتياجات التنظيف</p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          خدماتنا ومنتجاتنا
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          اكتشف مجموعة منتجاتنا الشاملة التي تلبي جميع احتياجات التنظيف
+        </motion.p>
       </div>
 
       <section className="services-section">
@@ -62,10 +75,10 @@ const Services = () => {
             <motion.div 
               key={index}
               className="service-card"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -8 }}
             >
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
@@ -75,14 +88,22 @@ const Services = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <button className="service-btn">طلب الكتالوج</button>
+              <button className="service-btn">
+                <FaArrowLeft /> طلب الكتالوج
+              </button>
             </motion.div>
           ))}
         </div>
       </section>
 
       <section className="products-table-section">
-        <h2>مقارنة خطوط المنتجات</h2>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          مقارنة خطوط المنتجات
+        </motion.h2>
         <div className="table-container">
           <table className="products-table">
             <thead>

@@ -5,11 +5,23 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #3B82F6;
+  --primary-dark: #2563EB;
+  --secondary: #8B5CF6;
+  --accent: #10B981;
+  --light: #F0F9FF;
+  --dark: #1F2937;
+  --gray-light: #f8fafc;
+  --gray: #6B7280;
+  --white: #ffffff;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f8fafc;
+  background-color: var(--gray-light);
   direction: rtl;
 }
 
@@ -40,8 +52,8 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
 }
 
 .btn-primary:hover {
@@ -51,13 +63,13 @@ a {
 
 .btn-secondary {
   background: transparent;
-  color: #3B82F6;
-  border: 2px solid #3B82F6;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
 .btn-secondary:hover {
-  background: #3B82F6;
-  color: white;
+  background: var(--primary);
+  color: var(--white);
 }
 
 .btn-large {
@@ -67,7 +79,7 @@ a {
 
 /* رأس الموقع */
 .header {
-  background: white;
+  background: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -93,7 +105,7 @@ a {
   gap: 10px;
   font-size: 24px;
   font-weight: 700;
-  color: #3B82F6;
+  color: var(--primary);
 }
 
 .logo-icon {
@@ -120,7 +132,7 @@ a {
 }
 
 .nav-link:hover {
-  color: #3B82F6;
+  color: var(--primary);
 }
 
 .nav-link::after {
@@ -130,7 +142,7 @@ a {
   right: 0;
   width: 0;
   height: 2px;
-  background: #3B82F6;
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -139,8 +151,8 @@ a {
 }
 
 .cta-button {
-  background: #10B981;
-  color: white;
+  background: var(--accent);
+  color: var(--white);
   padding: 10px 20px;
   border-radius: 6px;
   display: flex;
@@ -153,13 +165,13 @@ a {
   background: none;
   border: none;
   font-size: 24px;
-  color: #3B82F6;
+  color: var(--primary);
   cursor: pointer;
 }
 
 .mobile-menu {
   display: none;
-  background: white;
+  background: var(--white);
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -167,8 +179,6 @@ a {
   right: 0;
   top: 70px;
   z-index: 999;
-  max-height: calc(100vh - 70px);
-  overflow-y: auto;
 }
 
 .mobile-nav-link {
@@ -187,21 +197,29 @@ a {
 .hero-section {
   max-width: 1200px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  border-radius: 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
   font-size: 48px;
+  line-height: 1.2;
   margin-bottom: 20px;
-  color: #1F2937;
+  color: var(--dark);
 }
 
 .hero-content h1 span {
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -209,13 +227,15 @@ a {
 
 .hero-subtitle {
   font-size: 18px;
-  color: #6B7280;
+  color: var(--gray);
   margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -246,14 +266,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--white);
   font-size: 48px;
   margin-bottom: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .floating-product span {
-  background: white;
+  background: var(--white);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 14px;
@@ -266,13 +286,7 @@ a {
   50% { transform: translateY(-20px); }
 }
 
-/* قسم المميزات */
-.features-section {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
+/* الأقسام المشتركة */
 .section-header {
   text-align: center;
   margin-bottom: 50px;
@@ -280,40 +294,80 @@ a {
 
 .section-header h2 {
   font-size: 36px;
-  color: #1F2937;
+  color: var(--dark);
   margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2px;
 }
 
 .section-header p {
-  color: #6B7280;
+  color: var(--gray);
   font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* قسم المميزات */
+.features-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .feature-card {
-  background: white;
+  background: var(--white);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 
 .feature-icon {
   font-size: 48px;
-  color: #3B82F6;
-  margin-bottom: 20px;
+  color: var(--primary);
+  background: linear-gradient(135deg, #E0F2FE, #F0F9FF);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
 }
 
 .feature-card h3 {
   font-size: 20px;
   margin-bottom: 15px;
-  color: #1F2937;
+  color: var(--dark);
+}
+
+.feature-card p {
+  color: var(--gray);
+  line-height: 1.6;
 }
 
 /* قسم المنتجات */
@@ -325,77 +379,141 @@ a {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  margin-top: 40px;
 }
 
 .product-card {
-  background: white;
-  border-radius: 15px;
+  background: var(--white);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
 }
 
 .product-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.product-color {
-  height: 120px;
+.product-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .product-info {
-  padding: 20px;
-}
-
-.product-thumb {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  padding: 25px;
 }
 
 .product-info h3 {
   font-size: 18px;
+  color: var(--dark);
   margin-bottom: 10px;
-  color: #1F2937;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.product-category {
-  color: #6B7280;
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.star-icon {
+  color: #FBBF24;
+  font-size: 16px;
+}
+
+.rating-text {
+  color: var(--gray);
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-right: 5px;
 }
 
 .product-btn {
-  background: #F3F4F6;
-  color: #3B82F6;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
 }
 
 .product-btn:hover {
-  background: #3B82F6;
-  color: white;
+  background: linear-gradient(135deg, var(--primary-dark), #7C3AED);
+  transform: scale(1.02);
 }
 
 /* قسم دعوة للعمل */
 .cta-section {
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
   padding: 80px 20px;
   text-align: center;
-  margin-top: 80px;
+  border-radius: 20px;
+  margin: 80px auto;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0V100H1000V0C750,50 500,75 250,50S0,25 0,0Z" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: cover;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .cta-content h2 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 20px;
 }
 
@@ -420,46 +538,63 @@ a {
 
 .page-header h1 {
   font-size: 48px;
-  color: #1F2937;
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
 .page-header p {
-  color: #6B7280;
+  color: var(--gray);
   font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .service-card {
-  background: white;
+  background: var(--white);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .service-icon {
   font-size: 48px;
-  color: #3B82F6;
+  color: var(--primary);
   margin-bottom: 20px;
+  background: linear-gradient(135deg, #E0F2FE, #F0F9FF);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-card h3 {
   font-size: 24px;
   margin-bottom: 15px;
-  color: #1F2937;
+  color: var(--dark);
+  line-height: 1.3;
 }
 
 .service-description {
-  color: #6B7280;
+  color: var(--gray);
   margin-bottom: 20px;
   line-height: 1.8;
+  font-size: 16px;
 }
 
 .service-features {
@@ -468,75 +603,85 @@ a {
 }
 
 .service-features li {
-  padding: 8px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #eee;
   color: #4B5563;
   position: relative;
-  padding-right: 20px;
+  padding-right: 25px;
+  font-size: 15px;
 }
 
 .service-features li:before {
   content: '✓';
   position: absolute;
   right: 0;
-  color: #10B981;
+  color: var(--accent);
   font-weight: bold;
+  font-size: 18px;
 }
 
 .service-btn {
-  background: #3B82F6;
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 .service-btn:hover {
-  background: #2563EB;
+  background: linear-gradient(135deg, var(--primary-dark), #7C3AED);
+  transform: scale(1.02);
 }
 
 /* جدول المنتجات */
 .products-table-section {
-  background: white;
+  background: var(--white);
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   margin-bottom: 80px;
+  border: 1px solid #f1f5f9;
 }
 
 .products-table-section h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #1F2937;
+  color: var(--dark);
+  font-size: 32px;
 }
 
 .table-container {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .products-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px;
 }
 
 .products-table th {
   background: #F3F4F6;
   color: #374151;
   font-weight: 600;
-  padding: 15px;
+  padding: 18px 20px;
   text-align: right;
   border-bottom: 2px solid #E5E7EB;
+  font-size: 16px;
 }
 
 .products-table td {
-  padding: 15px;
+  padding: 18px 20px;
   text-align: right;
   border-bottom: 1px solid #E5E7EB;
-  color: #6B7280;
+  color: var(--gray);
+  font-size: 15px;
 }
 
 .products-table tr:hover {
@@ -566,12 +711,13 @@ a {
 }
 
 .contact-card {
-  background: white;
+  background: var(--white);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
   transition: transform 0.3s ease;
+  border: 1px solid #f1f5f9;
 }
 
 .contact-card:hover {
@@ -580,47 +726,49 @@ a {
 
 .contact-icon {
   font-size: 36px;
-  color: #3B82F6;
+  color: var(--primary);
   margin-bottom: 15px;
 }
 
 .contact-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #1F2937;
+  color: var(--dark);
 }
 
 .contact-card p {
-  color: #6B7280;
+  color: var(--gray);
   margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .contact-action-btn {
-  background: #F3F4F6;
-  color: #3B82F6;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 15px;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .contact-action-btn:hover {
-  background: #3B82F6;
-  color: white;
+  transform: scale(1.05);
 }
 
 .whatsapp-card {
   background: linear-gradient(135deg, #25D366, #128C7E);
-  color: white;
+  color: var(--white);
   padding: 25px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .whatsapp-icon {
@@ -628,7 +776,7 @@ a {
 }
 
 .whatsapp-btn {
-  background: white;
+  background: var(--white);
   color: #25D366;
   padding: 12px 24px;
   border-radius: 8px;
@@ -638,19 +786,23 @@ a {
 
 .whatsapp-btn:hover {
   background: #F3F4F6;
+  transform: scale(1.05);
 }
 
 /* نموذج التواصل */
 .contact-form-section {
-  background: white;
+  background: var(--white);
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
 }
 
 .contact-form-section h2 {
   margin-bottom: 30px;
-  color: #1F2937;
+  color: var(--dark);
+  font-size: 32px;
+  text-align: center;
 }
 
 .form-row {
@@ -669,56 +821,72 @@ a {
   margin-bottom: 8px;
   font-weight: 600;
   color: #374151;
+  font-size: 15px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border: 2px solid #E5E7EB;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  background: var(--white);
+  font-family: inherit;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #3B82F6;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  color: white;
-  padding: 15px 30px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 16px 30px;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
   border: none;
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 .success-message {
   text-align: center;
-  padding: 40px;
-  background: #F0F9FF;
-  border-radius: 12px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+  border-radius: 16px;
+  border: 2px solid var(--primary);
 }
 
 .success-icon {
   font-size: 64px;
-  color: #10B981;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .success-message h3 {
-  font-size: 24px;
-  color: #1F2937;
-  margin-bottom: 10px;
+  font-size: 28px;
+  color: var(--dark);
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  color: var(--gray);
+  font-size: 18px;
 }
 
 /* قسم الخريطة */
@@ -729,26 +897,29 @@ a {
 .map-section h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #1F2937;
+  color: var(--dark);
+  font-size: 32px;
 }
 
 .map-placeholder {
-  background: white;
-  border-radius: 15px;
+  background: var(--white);
+  border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
+  border: 1px solid #f1f5f9;
 }
 
 .map-frame {
   height: 300px;
   background: #F3F4F6;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #6B7280;
+  color: var(--gray);
+  font-size: 18px;
 }
 
 .map-marker {
@@ -759,9 +930,10 @@ a {
 
 /* تذييل الصفحة */
 .footer {
-  background: #1F2937;
-  color: white;
+  background: var(--dark);
+  color: var(--white);
   padding: 60px 0 30px;
+  margin-top: auto;
 }
 
 .footer-content {
@@ -780,17 +952,20 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--white);
 }
 
 .footer-description {
   color: #D1D5DB;
   line-height: 1.8;
+  font-size: 15px;
 }
 
 .footer-section h3 {
   font-size: 18px;
   margin-bottom: 20px;
-  color: white;
+  color: var(--white);
+  font-weight: 600;
 }
 
 .footer-links {
@@ -798,27 +973,74 @@ a {
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-links a {
   color: #D1D5DB;
   transition: color 0.3s ease;
+  font-size: 15px;
 }
 
 .footer-links a:hover {
-  color: #3B82F6;
+  color: var(--primary);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
   border-top: 1px solid #374151;
   color: #9CA3AF;
+  font-size: 14px;
+}
+
+/* تنسيقات إضافية */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #374151;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
 }
 
 /* تصميم متجاوب */
+@media (max-width: 1024px) {
+  .hero-section {
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-menu-btn {
     display: block;
@@ -835,18 +1057,38 @@ a {
   .hero-section {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 40px 20px;
+    margin: 20px auto;
   }
 
   .hero-content h1 {
-    font-size: 36px;
+    font-size: 32px;
+  }
+  
+  .hero-image {
+    height: 300px;
+    margin-top: 30px;
+  }
+  
+  .product-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
   }
 
   .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
     justify-content: center;
   }
 
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .form-row {
@@ -855,29 +1097,25 @@ a {
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .service-card {
-    padding: 20px;
+    padding: 25px 20px;
   }
-
+  
   .service-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
   }
-
+  
   .service-card h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
-
-  .products-table th,
-  .products-table td {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .table-container {
-    -webkit-overflow-scrolling: touch;
+  
+  .service-description {
+    font-size: 15px;
   }
 
   .features-grid {
@@ -887,74 +1125,108 @@ a {
   .products-grid {
     grid-template-columns: 1fr;
   }
-}
-/* تنسيقات إضافية للاجتماعات */
-.social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #374151;
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-  background: #3B82F6;
-  transform: translateY(-3px);
-}
-
-/* تحسينات للاستجابة */
-@media (max-width: 1024px) {
-  .hero-section {
-    gap: 40px;
+  
+  .section-header h2 {
+    font-size: 28px;
   }
   
-  .hero-content h1 {
-    font-size: 42px;
+  .page-header h1 {
+    font-size: 36px;
+  }
+  
+  .cta-content h2 {
+    font-size: 32px;
+  }
+  
+  .contact-form-section h2,
+  .products-table-section h2,
+  .map-section h2 {
+    font-size: 28px;
+  }
+  
+  .products-table-section {
+    padding: 25px 20px;
+  }
+  
+  .contact-form-section {
+    padding: 30px 20px;
+  }
+  
+  .whatsapp-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .whatsapp-btn {
+    width: 100%;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content h1 {
+    font-size: 28px;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+  }
+  
+  .page-header h1 {
     font-size: 32px;
   }
   
-  .hero-buttons {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .nav-container {
-    padding: 0 15px;
-  }
-  
-  .contact-form-section {
-    padding: 20px;
-  }
-
-  .services-page {
-    padding: 20px;
-  }
-
-  .service-icon {
-    font-size: 36px;
-  }
-
+  .feature-card, 
+  .product-card,
   .service-card {
-    padding: 16px;
+    padding: 20px;
+  }
+  
+  .product-info,
+  .contact-card {
+    padding: 20px;
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .hero-subtitle,
+  .section-header p,
+  .page-header p {
+    font-size: 16px;
+  }
+  
+  .cta-section {
+    padding: 60px 20px;
+    margin: 60px auto;
+  }
+  
+  .cta-content h2 {
+    font-size: 28px;
+  }
+  
+  .cta-content p {
+    font-size: 16px;
+  }
+  
+  .footer {
+    padding: 40px 0 20px;
   }
 }

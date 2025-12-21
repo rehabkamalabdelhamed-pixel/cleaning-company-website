@@ -10,7 +10,6 @@ import {
   FaArrowLeft,
   FaSprayCan
 } from 'react-icons/fa';
-import ServiceCard from '../components/ServiceCard';
 
 const Home = () => {
   const features = [
@@ -21,10 +20,30 @@ const Home = () => {
   ];
 
   const topProducts = [
-    { name: 'معقم الأسطح المتقدم', category: 'تعقيم', color: '#3B82F6', image: 'https://medimixegypt.com/wp-content/uploads/2025/09/1010349.jpg' },
-    { name: 'منظف الزجاج اللامع', category: 'تنظيف الزجاج', color: '#10B981' },
-    { name: 'مطهر الحمامات القوي', category: 'تنظيف الحمامات', color: '#8B5CF6' },
-    { name: 'منعش الجو الطبيعي', category: 'تعطير', color: '#F59E0B' }
+    { 
+      name: 'معقم الأسطح المتقدم', 
+      category: 'تعقيم', 
+      image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=400&h=300&fit=crop',
+      color: '#3B82F6' 
+    },
+    { 
+      name: 'منظف الزجاج اللامع', 
+      category: 'تنظيف الزجاج', 
+      image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w-400&h=300&fit=crop',
+      color: '#10B981' 
+    },
+    { 
+      name: 'مطهر الحمامات القوي', 
+      category: 'تنظيف الحمامات',
+      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop',
+      color: '#8B5CF6' 
+    },
+    { 
+      name: 'منعش الجو الطبيعي', 
+      category: 'تعطير', 
+      image: 'https://images.unsplash.com/photo-1603575448878-868a20723f5d?w=400&h=300&fit=crop',
+      color: '#F59E0B' 
+    }
   ];
 
   return (
@@ -99,20 +118,38 @@ const Home = () => {
         </div>
         <div className="products-grid">
           {topProducts.map((product, index) => (
-            <div key={index} className="product-card">
-              <div 
-                className="product-color" 
-                style={{ backgroundColor: product.color }}
-              ></div>
-              <div className="product-info">
-                {product.image && (
-                  <img src={product.image} alt={product.name} className="product-thumb" />
-                )}
-                <h3>{product.name}</h3>
-                <p className="product-category">{product.category}</p>
-                <button className="product-btn">تفاصيل المنتج</button>
+            <motion.div 
+              key={index}
+              className="product-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="product-image-container">
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="product-image"
+                  loading="lazy"
+                />
+                <div className="product-badge" style={{ backgroundColor: product.color }}>
+                  {product.category}
+                </div>
               </div>
-            </div>
+              <div className="product-info">
+                <h3>{product.name}</h3>
+                <div className="product-rating">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="star-icon" />
+                  ))}
+                  <span className="rating-text">(4.8)</span>
+                </div>
+                <button className="product-btn">
+                  <FaArrowLeft /> عرض التفاصيل
+                </button>
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
