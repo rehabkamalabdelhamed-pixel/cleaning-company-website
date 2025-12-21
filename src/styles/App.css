@@ -416,7 +416,7 @@ a {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 80px;
 }
@@ -842,6 +842,29 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .products-table th,
+  .products-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .table-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -906,5 +929,17 @@ a {
   
   .contact-form-section {
     padding: 20px;
+  }
+
+  .services-page {
+    padding: 20px;
+  }
+
+  .service-icon {
+    font-size: 36px;
+  }
+
+  .service-card {
+    padding: 16px;
   }
 }
