@@ -594,7 +594,7 @@ a {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
 }
@@ -1163,6 +1163,41 @@ a {
     width: 70px;
     height: 70px;
     font-size: 36px;
+  }
+
+  /* header / logo adjustments for mobile */
+  .nav-container {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .logo small {
+    display: none;
+  }
+
+  .cta-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* mobile menu sits under a slightly smaller header */
+  .mobile-menu {
+    top: 64px;
+    max-height: calc(100vh - 64px);
+  }
+
+  /* footer spacing on tablet/mobile */
+  .footer {
+    padding: 40px 0 20px;
   }
   
   .service-card h3 {
