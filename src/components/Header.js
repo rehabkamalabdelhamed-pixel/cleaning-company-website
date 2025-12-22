@@ -29,7 +29,7 @@ const Header = () => {
               </Link>
             ))}
             <a href="https://wa.me/201558703970" target="_blank" rel="noopener noreferrer" className="cta-button">
-              <FaWhatsapp />  +20 15 58703970
+              <FaWhatsapp />  
             </a>
           </div>
 
