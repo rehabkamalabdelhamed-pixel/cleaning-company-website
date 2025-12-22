@@ -108,8 +108,17 @@ a {
   color: var(--primary);
 }
 
-.logo-icon {
-  font-size: 32px;
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  /* subtle blurred look and slight border to separate from background */
+  filter: blur(0.6px);
+  -webkit-filter: blur(0.6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  border: 2px solid rgba(255,255,255,0.6);
 }
 
 .logo small {
@@ -427,6 +436,40 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* overlay CTA on image hover */
+.product-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(6px);
+}
+
+.product-card:hover .product-image-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-btn {
+  background: rgba(255,255,255,0.95);
+  color: var(--dark);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.18s ease;
+}
+
+.overlay-btn:active {
+  transform: scale(0.98);
 }
 
 .product-info {
@@ -953,6 +996,18 @@ a {
   align-items: center;
   gap: 10px;
   color: var(--white);
+}
+
+.footer-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: blur(0.6px);
+  -webkit-filter: blur(0.6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  border: 2px solid rgba(255,255,255,0.55);
 }
 
 .footer-description {

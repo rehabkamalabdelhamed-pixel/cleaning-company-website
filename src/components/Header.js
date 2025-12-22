@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes, FaSprayCan, FaPhoneAlt } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSprayCan, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +17,9 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container">
           <Link to="/" className="logo">
-            <FaSprayCan className="logo-icon" />
-            <span>كلين برو</span>
-            <small>للمواد التنظيف المتطورة</small>
+            <img src="/photos/logo.jpeg" alt="كلين برو" className="logo-img" />
+            <span> اغادير العالم </span>
+            <small> لاسترداد  مواد التنظيف والخرداوات والزينه</small>
           </Link>
 
           <div className="desktop-menu">
@@ -28,8 +28,8 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a href="tel:+966500000000" className="cta-button">
-              <FaPhoneAlt /> اتصل بنا
+            <a href="https://wa.me/201558703970" target="_blank" rel="noopener noreferrer" className="cta-button">
+              <FaWhatsapp />  +20 15 58703970
             </a>
           </div>
 

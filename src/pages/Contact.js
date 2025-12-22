@@ -51,21 +51,21 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'هاتف الشركة',
-      details: ['+966 500 000 000', '+966 11 123 4567'],
+      details: ['+218 91-8407257'],
       action: 'اتصل الآن'
     },
     {
       icon: <FaEnvelope />,
       title: 'البريد الإلكتروني',
-      details: ['info@cleanpro.com', 'sales@cleanpro.com'],
+      details: ['agadiralalm@gmail.com'],
       action: 'أرسل بريدًا'
     },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: 'العنوان',
-      details: ['الرياض، المملكة العربية السعودية', 'شارع الملك فهد، برج الأعمال'],
-      action: 'عرض الخريطة'
-    },
+    // {
+    //   icon: <FaMapMarkerAlt />,
+    //   title: 'العنوان',
+    //   details: ['الرياض، المملكة العربية السعودية', 'شارع الملك فهد، برج الأعمال'],
+    //   action: 'عرض الخريطة'
+    // },
     {
       icon: <FaClock />,
       title: 'ساعات العمل',
@@ -120,7 +120,7 @@ const Contact = () => {
                 <p>احصل على رد سريع عبر الواتساب</p>
               </div>
               <a 
-                href="https://wa.me/966500000000" 
+                href="https://wa.me/+201558703970" 
                 className="whatsapp-btn"
                 target="_blank"
                 rel="noopener noreferrer"

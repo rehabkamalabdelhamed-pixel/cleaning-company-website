@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaSprayCan, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaSprayCan, FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,17 +10,15 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <div className="footer-logo">
-            <FaSprayCan />
-            <span>كلين برو</span>
+            <img src="/photos/logo.jpeg" alt="كلين برو" className="footer-logo-img" />
+            <span> اغادير العالم</span>
           </div>
           <p className="footer-description">
             شركة رائدة في مجال مواد التنظيف المتطورة، نقدم حلولاً مبتكرة وآمنة وفعالة لجميع احتياجات التنظيف المنزلية والصناعية.
           </p>
           <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://www.facebook.com/share/17tfkhTL72/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
+            <a href="https://wa.me/201558703970" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 
@@ -47,18 +45,20 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>اتصل بنا</h3>
+            <h3>اتصل بنا</h3>
           <ul className="footer-links">
             <li>الرياض، المملكة العربية السعودية</li>
-            <li>هاتف: +966 500 000 000</li>
-            <li>بريد إلكتروني: info@cleanpro.com</li>
+            <li>  هاتف / واتساب :
+              +218 91-8407257</li>
+            <li> بريد الكتروني : agadiralalm@gmail.com </li>
             <li>ساعات العمل: 8 ص - 5 م</li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© {currentYear} كلين برو لمواد التنظيف المتطورة. جميع الحقوق محفوظة.</p>
+        <p>© {currentYear} شركة اغادير العالم لاستيراد مواد التنظيف
+. جميع الحقوق محفوظة.</p>
       </div>
     </footer>
   );

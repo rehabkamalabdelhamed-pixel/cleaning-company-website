@@ -23,25 +23,25 @@ const Home = () => {
     { 
       name: 'معقم الأسطح المتقدم', 
       category: 'تعقيم', 
-      image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=400&h=300&fit=crop',
+      image: '/photos/WhatsApp Image 2025-12-22 at 3.43.47 PM.jpeg',
       color: '#3B82F6' 
     },
     { 
       name: 'منظف الزجاج اللامع', 
       category: 'تنظيف الزجاج', 
-      image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w-400&h=300&fit=crop',
+      image: '/photos/WhatsApp Image 2025-12-22 at 3.43.47 .jpeg',
       color: '#10B981' 
     },
     { 
       name: 'مطهر الحمامات القوي', 
       category: 'تنظيف الحمامات',
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop',
+      image: '/photos/WhatsApp Image 2025-12-22 .jpeg',
       color: '#8B5CF6' 
     },
     { 
       name: 'منعش الجو الطبيعي', 
       category: 'تعطير', 
-      image: 'https://images.unsplash.com/photo-1603575448878-868a20723f5d?w=400&h=300&fit=crop',
+      image: '/photos/WhatsApp Image .jpeg',
       color: '#F59E0B' 
     }
   ];
@@ -133,6 +133,9 @@ const Home = () => {
                   className="product-image"
                   loading="lazy"
                 />
+                <div className="product-image-overlay">
+                  <button className="overlay-btn">عرض المنتج</button>
+                </div>
                 <div className="product-badge" style={{ backgroundColor: product.color }}>
                   {product.category}
                 </div>
