@@ -7,13 +7,15 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Products from './pages/Products';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import './styles/App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+          <Header />
+          <FloatingWhatsApp />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

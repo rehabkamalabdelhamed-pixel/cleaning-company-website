@@ -211,7 +211,7 @@ const Services = () => {
               <div className="icon-bg">🚚</div>
             </div>
             <h4>توصيل سريع</h4>
-            <p>خلال 24-48 ساعة لجميع أنحاء المملكة</p>
+            <p>خلال 24-48 ساعة لجميع أنحاء ليبيا </p>
           </div>
           <div className="feature-item">
             <div className="feature-icon">
