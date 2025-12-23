@@ -13,7 +13,6 @@ const images = [
   '/photos/WhatsApp Image 2025-12-22 at 3.43jpeg',
   '/photos/WhatsApp Image 2025.jpeg',
   '/photos/classclean.jpeg',
-  '/photos/logo.jpeg',
 ];
 
 const Products = () => {
