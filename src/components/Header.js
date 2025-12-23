@@ -9,6 +9,7 @@ const Header = () => {
   const menuItems = [
     { name: 'الرئيسية', path: '/' },
     { name: 'خدماتنا', path: '/services' },
+    { name: 'منتجاتنا', path: '/products' },
     { name: 'تواصل معنا', path: '/contact' }
   ];
 
@@ -19,7 +20,7 @@ const Header = () => {
           <Link to="/" className="logo">
             <img src="/photos/logo.jpeg" alt="كلين برو" className="logo-img" />
             <span> اغادير العالم </span>
-            <small> لاسترداد  مواد التنظيف والخرداوات والزينه</small>
+            <small> لاستيراد  مواد التنظيف والخرداوات والزينة</small>
           </Link>
 
           <div className="desktop-menu">
@@ -28,7 +29,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a href="https://wa.me/201558703970" target="_blank" rel="noopener noreferrer" className="cta-button">
+            <a href="https://wa.me/0913131778" target="_blank" rel="noopener noreferrer" className="cta-button">
               <FaWhatsapp />  
             </a>
           </div>

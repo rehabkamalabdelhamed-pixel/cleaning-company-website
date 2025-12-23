@@ -10,15 +10,15 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <div className="footer-logo">
-            <img src="/photos/logo.jpeg" alt="كلين برو" className="footer-logo-img" />
+            <img src="/photos/logo.jpeg" alt="اغادير العالم" className="footer-logo-img" />
             <span> اغادير العالم</span>
           </div>
           <p className="footer-description">
-            شركة رائدة في مجال مواد التنظيف المتطورة، نقدم حلولاً مبتكرة وآمنة وفعالة لجميع احتياجات التنظيف المنزلية والصناعية.
+            لمواد التنظيف هي شركة متخصصة في توفير وتوزيع مواد التنظيف عالية الجودة.
           </p>
           <div className="social-links">
             <a href="https://www.facebook.com/share/17tfkhTL72/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-            <a href="https://wa.me/201558703970" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            <a href="https://wa.me/0913131778" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 
@@ -47,9 +47,9 @@ const Footer = () => {
         <div className="footer-section">
             <h3>اتصل بنا</h3>
           <ul className="footer-links">
-            <li>الرياض، المملكة العربية السعودية</li>
+            <li> ليبيا مصراتة  </li>
             <li>  هاتف / واتساب :
-              +218 91-8407257</li>
+              <span className="ltr-text"><a href="tel:+218918407257">+218 91-8407257</a></span></li>
             <li> بريد الكتروني : agadiralalm@gmail.com </li>
             <li>ساعات العمل: 8 ص - 5 م</li>
           </ul>

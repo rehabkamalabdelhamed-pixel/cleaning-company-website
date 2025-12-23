@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import About from './pages/About';
+import Products from './pages/Products';
 import './styles/App.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>

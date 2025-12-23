@@ -27,14 +27,14 @@ const Home = () => {
       color: '#3B82F6' 
     },
     { 
-      name: 'منظف الزجاج اللامع', 
-      category: 'تنظيف الزجاج', 
+      name: 'صابون غسالة أوتوماتيك', 
+      category: 'مسحوق  غسيل', 
       image: '/photos/WhatsApp Image 2025-12-22 at 3.43.47 .jpeg',
       color: '#10B981' 
     },
     { 
-      name: 'مطهر الحمامات القوي', 
-      category: 'تنظيف الحمامات',
+      name: 'مسحوق  غسيل سائل', 
+      category:' مسحوق  غسيل',
       image: '/photos/WhatsApp Image 2025-12-22 .jpeg',
       color: '#8B5CF6' 
     },

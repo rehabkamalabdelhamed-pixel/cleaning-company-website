@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { 
   FaPhone, 
   FaEnvelope, 
-  FaMapMarkerAlt, 
   FaClock, 
   FaWhatsapp,
   FaCheckCircle
@@ -105,9 +104,18 @@ const Contact = () => {
                 <div className="contact-icon">{info.icon}</div>
                 <h3>{info.title}</h3>
                 {info.details.map((detail, idx) => (
-                  <p key={idx}>{detail}</p>
+                  <p key={idx} className={info.title === 'هاتف الشركة' ? 'ltr-text' : ''}>{detail}</p>
                 ))}
-                <button className="contact-action-btn">{info.action}</button>
+                {info.title === 'هاتف الشركة' ? (
+                  <a
+                    className="contact-action-btn"
+                    href={`tel:${info.details[0].replace(/[^+\d]/g, '')}`}
+                  >
+                    {info.action}
+                  </a>
+                ) : (
+                  <button className="contact-action-btn">{info.action}</button>
+                )}
               </motion.div>
             ))}
           </div>
@@ -120,7 +128,7 @@ const Contact = () => {
                 <p>احصل على رد سريع عبر الواتساب</p>
               </div>
               <a 
-                href="https://wa.me/+201558703970" 
+                href="https://wa.me/0913131778" 
                 className="whatsapp-btn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -244,13 +252,17 @@ const Contact = () => {
       <section className="map-section">
         <h2>موقعنا على الخريطة</h2>
         <div className="map-placeholder">
-          {/* هنا يمكنك إضافة خريطة Google Maps الحقيقية */}
+          {/* Embeddable map centered on Misrata, Libya. Uses standard Google Maps embed query (no API key required). */}
           <div className="map-frame">
-            <div className="map-marker">
-              <FaMapMarkerAlt />
-            </div>
-            <p>الرياض، المملكة العربية السعودية</p>
+            <iframe
+              title="موقع اغادير العالم في مصراتة"
+              src="https://www.google.com/maps?q=32.3754,15.0920&z=14&output=embed"
+              frameBorder="0"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
+          <p className="map-caption">ليبيا — مصراتة</p>
         </div>
       </section>
     </div>
