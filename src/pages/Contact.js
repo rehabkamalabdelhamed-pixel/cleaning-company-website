@@ -128,7 +128,7 @@ const Contact = () => {
                 <p>احصل على رد سريع عبر الواتساب</p>
               </div>
               <a 
-                href="https://wa.me/0913131778" 
+                href="https://wa.me/218913088651" 
                 className="whatsapp-btn"
                 target="_blank"
                 rel="noopener noreferrer"

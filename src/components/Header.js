@@ -18,7 +18,7 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container">
           <Link to="/" className="logo">
-            <img src="/photos/logo.jpeg" alt="كلين برو" className="logo-img" />
+            <img src="/photos/profile.png" alt="كلين برو" className="logo-img" />
             <span> اغادير العالم </span>
             <small> لاستيراد  مواد التنظيف والخرداوات والزينة</small>
           </Link>
@@ -29,7 +29,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a href="https://wa.me/0913131778" target="_blank" rel="noopener noreferrer" className="cta-button">
+            <a href="https://wa.me/218913088651" target="_blank" rel="noopener noreferrer" className="cta-button">
               <FaWhatsapp />  
             </a>
           </div>

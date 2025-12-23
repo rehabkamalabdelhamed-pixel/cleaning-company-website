@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <div className="footer-logo">
-            <img src="/photos/logo.jpeg" alt="اغادير العالم" className="footer-logo-img" />
+            <img src="/photos/profile.png" alt="اغادير العالم" className="footer-logo-img" />
             <span> اغادير العالم</span>
           </div>
           <p className="footer-description">
@@ -18,7 +18,7 @@ const Footer = () => {
           </p>
           <div className="social-links">
             <a href="https://www.facebook.com/share/17tfkhTL72/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-            <a href="https://wa.me/0913131778" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            <a href="https://wa.me/218913088651" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 

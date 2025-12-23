@@ -102,23 +102,21 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 24px;
   font-weight: 700;
   color: var(--primary);
 }
 
 .logo-img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
   overflow: hidden;
-  /* subtle blurred look and slight border to separate from background */
-  filter: blur(0.6px);
-  -webkit-filter: blur(0.6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  border: 2px solid rgba(255,255,255,0.6);
+  background: #fff; /* make logo clear against header */
+  box-shadow: 0 4px 12px rgba(16,24,40,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .logo small {
@@ -1001,13 +999,12 @@ a {
 .footer-logo-img {
   width: 44px;
   height: 44px;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  border-radius: 8px;
   overflow: hidden;
-  filter: blur(0.6px);
-  -webkit-filter: blur(0.6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  border: 2px solid rgba(255,255,255,0.55);
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .map-frame {
