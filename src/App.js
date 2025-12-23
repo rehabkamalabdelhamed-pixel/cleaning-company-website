@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Products from './pages/Products';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
           <Header />
           <FloatingWhatsApp />
+          <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
