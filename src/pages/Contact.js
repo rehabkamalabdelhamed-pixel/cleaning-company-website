@@ -56,7 +56,7 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: 'البريد الإلكتروني',
-      details: ['agadiralalm@gmail.com'],
+      details: ['Contact@agadiralalam.ly'],
       action: 'أرسل بريدًا'
     },
     // {

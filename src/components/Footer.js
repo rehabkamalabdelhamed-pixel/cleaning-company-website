@@ -50,7 +50,7 @@ const Footer = () => {
             <li> ليبيا مصراتة  </li>
             <li>  هاتف / واتساب :
               <span className="ltr-text"><a href="tel:+218918407257">+218 91-8407257</a></span></li>
-            <li> بريد الكتروني : agadiralalm@gmail.com </li>
+            <li> بريد الكتروني : Contact@agadiralalam.ly </li>
             <li>ساعات العمل: 8 ص - 5 م</li>
           </ul>
         </div>
